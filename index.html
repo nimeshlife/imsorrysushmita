@@ -158,6 +158,121 @@
     </section>
   </main>
 
+<!-- OUR COVENANT OF LOVE: POP-UP -->
+<div class="covenant-overlay" id="covenantOverlay" hidden>
+  <div class="covenant-modal" role="dialog" aria-modal="true"
+       aria-labelledby="covenantQuestionTitle">
+
+   
+
+    <!-- STEP 1: FORGIVENESS -->
+    <section id="covenantQuestion">
+      <p class="covenant-eyebrow">A LITTLE QUESTION FOR MY LOVE ♡</p>
+      <div class="covenant-heart">♡</div>
+      <h2 id="covenantQuestionTitle">Have you forgiven me?</h2>
+      <p class="covenant-description">
+        I know you've forgiven me, my love. I just wanted to
+        make one more little memory for us to keep. ♡
+      </p>
+
+      <div class="covenant-actions">
+        <button class="covenant-yes" id="covenantYes" type="button">
+          Yes, my love ♡
+        </button>
+        <button class="covenant-no" id="covenantNo" type="button">
+          Not yet
+        </button>
+      </div>
+      <p class="covenant-footnote">Made with love, just for you.</p>
+    </section>
+
+    <!-- STEP 2: SIGNATURE -->
+    <section id="covenantSignStep" hidden>
+      <p class="covenant-eyebrow">OUR LITTLE PROMISE ♡</p>
+      <h2>Sign here, my love.</h2>
+      <p class="covenant-description">
+        Draw your signature below to add it to our Covenant of Love.
+      </p>
+
+      <div class="covenant-sign-pad">
+        <canvas id="sushmitaSignCanvas"
+                width="1000" height="300"
+                aria-label="Draw your signature"></canvas>
+        <span class="covenant-sign-hint">Sign here ♡</span>
+      </div>
+
+      <div class="covenant-actions">
+        <button class="covenant-secondary" id="covenantClear"
+                type="button">Clear</button>
+        <button class="covenant-yes" id="covenantSeal"
+                type="button">Download &amp; seal our promise ♡</button>
+      </div>
+      <p class="covenant-footnote">
+        GitHubma hal nimesh
+      </p>
+    </section>
+  </div>
+</div>
+
+<!-- OUR COVENANT OF LOVE: PERMANENT PAGE SECTION -->
+<section class="covenant-section" id="ourCovenant">
+  <div class="covenant-paper">
+    <p class="covenant-eyebrow">A KEEPSAKE OF OUR LOVE</p>
+    <div class="covenant-emblem">♡</div>
+    <h2>Our Covenant of Love</h2>
+    <p class="covenant-subtitle">A promise between two hearts</p>
+    <div class="covenant-rule"></div>
+
+    <p class="covenant-body">This little covenant belongs to</p>
+    <h3>Nimesh &amp; Sushmita</h3>
+
+    <p class="covenant-body">
+      We promise to keep choosing each other, to communicate
+      with honesty, to treat each other with kindness, and to
+      keep growing together.
+    </p>
+
+    <p class="covenant-body">
+      We promise to listen before reacting, to take responsibility
+      when we hurt each other, and to make room for each other's
+      feelings, even when we don't see things the same way.
+    </p>
+
+    <p class="covenant-vow">
+      Girlfriend &amp; Boyfriend, today and always. ♡
+    </p>
+
+    <p class="covenant-small">
+      Not a promise that we will never make mistakes, but a promise
+      to keep learning, listening, apologizing, and caring for each other.
+    </p>
+
+    <div class="covenant-signatures">
+      <div class="covenant-signature">
+        <img src="nimesh-signature.png.png"
+             alt="Nimesh's signature"
+             onerror="this.style.display='none'; this.nextElementSibling.hidden=false;">
+    
+        <div class="covenant-sign-line"></div>
+        <p>Nimesh</p>
+      </div>
+
+      <div class="covenant-signature">
+        <img id="savedSushmitaSignature"
+             src="images/sushmita-signature.png"
+             alt="Sushmita's signature"
+             onerror="this.style.display='none'; this.nextElementSibling.hidden=false;">
+       
+        <div class="covenant-sign-line"></div>
+        <p>Sushmita</p>
+      </div>
+    </div>
+
+    <p class="covenant-date" id="covenantDate"></p>
+    <p class="covenant-footer">MADE WITH LOVE · OUR STORY CONTINUES ♡</p>
+  </div>
+</section>
+
   <audio id="ourSong" preload="none" loop>
     <source src="our-song.mp3.mp3" type="audio/mpeg" />
   </audio>
