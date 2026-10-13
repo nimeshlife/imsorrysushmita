@@ -161,17 +161,7 @@ if (
 
   closeButton?.addEventListener("click", closePopup);
 
-  overlay.addEventListener("click", (event) => {
-    if (event.target === overlay) {
-      closePopup();
-    }
-  });
 
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !overlay.hidden) {
-      closePopup();
-    }
-  });
 
   // ========================================
   // YES: OPEN SIGNATURE PAD
