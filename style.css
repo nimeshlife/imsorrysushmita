@@ -154,3 +154,283 @@ h2 { font-size: clamp(2.5rem, 5vw, 4.7rem); margin-bottom: 20px; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* OUR COVENANT OF LOVE */
+
+.covenant-overlay[hidden],
+#covenantQuestion[hidden],
+#covenantSignStep[hidden] {
+  display: none !important;
+}
+
+.covenant-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow-y: auto;
+  background: rgba(45, 29, 33, 0.72);
+  backdrop-filter: blur(7px);
+}
+
+.covenant-modal {
+  position: relative;
+  width: min(100%, 540px);
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  padding: clamp(25px, 6vw, 42px);
+  border: 1px solid #e4cfc0;
+  border-radius: 8px;
+  background: #fbf3e9;
+  color: #604642;
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+}
+
+.covenant-close {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  border: 0;
+  background: transparent;
+  color: #8f6c67;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.covenant-eyebrow {
+  color: #a16d76;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.covenant-heart,
+.covenant-emblem {
+  color: #b97982;
+  font-family: Georgia, serif;
+  font-size: 48px;
+  margin: 12px 0;
+}
+
+.covenant-modal h2,
+.covenant-paper h2 {
+  color: #76504c;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(27px, 6vw, 38px);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.covenant-description {
+  max-width: 400px;
+  margin: 16px auto 24px;
+  color: #80675f;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.covenant-actions {
+  position: relative;
+  display: flex;
+  min-height: 70px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.covenant-yes,
+.covenant-no,
+.covenant-secondary {
+  padding: 12px 19px;
+  border-radius: 30px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.covenant-yes {
+  border: 1px solid #a66d77;
+  background: #a66d77;
+  color: white;
+}
+
+.covenant-no,
+.covenant-secondary {
+  border: 1px solid #dbc6b8;
+  background: #fffaf4;
+  color: #755a55;
+}
+
+.covenant-footnote {
+  margin-top: 20px;
+  color: #aa8a7c;
+  font-size: 12px;
+}
+
+/* Signature pad */
+
+.covenant-sign-pad {
+  position: relative;
+  margin: 20px 0;
+  overflow: hidden;
+  border: 1px solid #e3d1c0;
+  border-radius: 5px;
+  background: #fffdf8;
+}
+
+#sushmitaSignCanvas {
+  display: block;
+  width: 100%;
+  height: 155px;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.covenant-sign-hint {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  color: #c3aca0;
+  font-size: 10px;
+  pointer-events: none;
+}
+
+/* Permanent covenant section */
+
+.covenant-section {
+  padding: 60px 18px;
+  scroll-margin-top: 30px;
+}
+
+.covenant-paper {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(22px, 5vw, 48px);
+  border: 4px double #b99666;
+  outline: 1px solid #d8c39e;
+  outline-offset: -12px;
+  background: #f8f0df;
+  color: #6d5b48;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(77, 53, 34, 0.12);
+}
+
+.covenant-subtitle {
+  color: #9c8065;
+  font-style: italic;
+}
+
+.covenant-rule {
+  width: 65%;
+  height: 1px;
+  margin: 24px auto;
+  background: #c7ab7e;
+}
+
+.covenant-paper h3 {
+  margin: 16px 0;
+  color: #8f5f69;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: 500;
+}
+
+.covenant-body {
+  max-width: 540px;
+  margin: 16px auto;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.covenant-vow {
+  margin: 24px 0 14px;
+  color: #8e6066;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.covenant-small {
+  max-width: 480px;
+  margin: 15px auto 25px;
+  color: #907c68;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.covenant-signatures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 520px;
+  margin: 30px auto 12px;
+}
+
+.covenant-signature {
+  min-width: 0;
+  color: #745847;
+  font-size: 14px;
+}
+
+.covenant-signature img {
+  display: block;
+  width: 100%;
+  height: 75px;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.covenant-name-fallback {
+  display: block;
+  height: 75px;
+  padding-top: 32px;
+  font-family: cursive;
+  font-size: 22px;
+}
+
+.covenant-sign-line {
+  height: 1px;
+  background: #bda68c;
+}
+
+.covenant-signature p {
+  margin-top: 8px;
+}
+
+.covenant-date {
+  margin-top: 22px;
+  color: #9b8067;
+  font-size: 12px;
+}
+
+.covenant-footer {
+  margin-top: 25px;
+  color: #a08055;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 480px) {
+  .covenant-section {
+    padding: 35px 12px;
+  }
+
+  .covenant-signatures {
+    gap: 12px;
+  }
+
+  .covenant-paper {
+    padding: 28px 20px;
+  }
+}
+.covenant-sign-line[hidden],
+.covenant-sign-line {
+  display: block !important;
+  visibility: visible !important;
+}
