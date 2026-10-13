@@ -207,103 +207,11 @@ if (
     hasInk = false;
   });
 
- 
-sealButton?.addEventListener("click", async () => {
-  if (!hasInk) {
-    alert("Please add your signature first, my love. ♡");
-    return;
-  }
-
-  const SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbydfKfJhq6y5jrZI3lZLJtRlrdF3bIzu1SWb0p21h6ja1-wvwKrvp969vaevrUORFyD/exec";
-
-  const originalText = sealButton.textContent;
-  sealButton.disabled = true;
-  sealButton.textContent = "Sending your promise ♡";
-
-  try {
-    const imageData = canvas.toDataURL("image/png");
-
-    // Submit as text/plain to avoid a JSON CORS preflight.
-    // no-cors means the browser cannot read Google's response.
-    await fetch(SCRIPT_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "text/plain;charset=UTF-8"
-      },
-      body: JSON.stringify({
-        signature: imageData
-      })
-    });
-
-    // The request was dispatched, but email delivery is
-    // NOT confirmed because no-cors hides the server response.
-    const status = document.createElement("p");
-    status.className = "covenant-footnote";
-    status.setAttribute("role", "status");
-    status.textContent =
-      "Your signature was submitted to Google. Please check the recipient's Gmail before closing this page. ♡";
-
-    let previousStatus = document.getElementById(
-      "signatureSubmissionStatus"
-    );
-
-    if (!previousStatus) {
-      previousStatus = status;
-      previousStatus.id = "signatureSubmissionStatus";
-      sealButton.parentElement.insertAdjacentElement(
-        "afterend",
-        previousStatus
-      );
-    } else {
-      previousStatus.textContent = status.textContent;
+  sealButton?.addEventListener("click", () => {
+    if (!hasInk) {
+      alert("Please add your signature first, my love. ♡");
+      return;
     }
-
-    // Keep the signature visible on this page.
-    const covenant = document.getElementById("ourCovenant");
-    const signatureImage = document.getElementById(
-      "savedSushmitaSignature"
-    );
-    const date = document.getElementById("covenantDate");
-
-    if (signatureImage) {
-      signatureImage.src = imageData;
-      signatureImage.style.display = "block";
-
-      if (signatureImage.nextElementSibling) {
-        signatureImage.nextElementSibling.hidden = true;
-      }
-    }
-
-    if (date) {
-      date.textContent = "Our promise, made on " +
-        new Intl.DateTimeFormat("en", {
-          day: "numeric",
-          month: "long",
-          year: "numeric"
-        }).format(new Date());
-    }
-
-    overlay.hidden = true;
-
-    if (covenant) {
-      covenant.scrollIntoView({
-        behavior: reducedMotion ? "auto" : "smooth",
-        block: "start"
-      });
-    }
-  } catch (error) {
-    console.error("Signature submission failed:", error);
-    alert(
-      "We couldn't submit the signature. Please check your connection and try again. ♡"
-    );
-  } finally {
-    sealButton.disabled = false;
-    sealButton.textContent = originalText;
-  }
-});
-
 
     // Download a transparent PNG for manual GitHub upload.
     const imageData = canvas.toDataURL("image/png");
