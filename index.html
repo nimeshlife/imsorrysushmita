@@ -223,4 +223,145 @@
   </audio>
   <script src="script.js"></script>
 </body>
+  
+<!-- 8-Month Anniversary Popup -->
+<div id="anniversaryPopup" class="anniversary-overlay">
+  <div class="anniversary-box">
+    <button class="anniversary-close" id="closePopup"
+      aria-label="Close popup">&times;</button>
+
+    <div class="anniversary-heart">♡</div>
+    <p class="anniversary-label">i love you a lot sushmita </p>
+
+    <h2>Happy 8 Months, My Love</h2>
+
+    <p class="anniversary-message">
+      Eight months of memories, smiles, and a love
+      that means so much to me. I made something
+      special for you, Sushmita and im really sorry for the things i did to you  ♡
+    </p>
+
+    <button id="openAnniversary" class="anniversary-button">
+      please click here
+    </button>
+
+    <p class="anniversary-footer">Made with love, just for you babe</p>
+  </div>
+</div>
+
+<style>
+.anniversary-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(2, 6, 18, 0.88);
+  backdrop-filter: blur(10px);
+}
+
+.anniversary-box {
+  position: relative;
+  width: 100%;
+  max-width: 410px;
+  padding: 38px 28px;
+  text-align: center;
+  color: #f5f7ff;
+  background: linear-gradient(145deg, #101b34, #080d1c);
+  border: 1px solid rgba(100, 170, 255, 0.45);
+  border-radius: 24px;
+  box-shadow: 0 0 60px rgba(45, 115, 255, 0.2);
+  animation: anniversaryAppear 0.7s ease both;
+}
+
+.anniversary-close {
+  position: absolute;
+  top: 12px;
+  right: 17px;
+  border: none;
+  background: transparent;
+  color: #bdcbea;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.anniversary-heart {
+  font-size: 55px;
+  color: #80bfff;
+  animation: heartGlow 2s ease-in-out infinite;
+}
+
+.anniversary-label {
+  margin: 12px 0;
+  color: #80bfff;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.anniversary-box h2 {
+  margin: 12px 0;
+  font-size: clamp(25px, 6vw, 32px);
+  line-height: 1.25;
+}
+
+.anniversary-message {
+  color: #c4cee0;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 18px 0 25px;
+}
+
+.anniversary-button {
+  width: 100%;
+  padding: 15px 12px;
+  border: 1px solid #6ca9ff;
+  border-radius: 12px;
+  background: linear-gradient(100deg, #244d91, #367bd5);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.anniversary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(60, 130, 255, 0.3);
+}
+
+.anniversary-footer {
+  margin: 22px 0 0;
+  color: #8294b5;
+  font-size: 12px;
+}
+
+@keyframes anniversaryAppear {
+  from { opacity: 0; transform: translateY(18px) scale(.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes heartGlow {
+  0%, 100% { text-shadow: 0 0 8px #3478d8; }
+  50% { text-shadow: 0 0 25px #80bfff; }
+}
+
+@media (max-width: 480px) {
+  .anniversary-box { padding: 34px 22px; }
+}
+</style>
+
+<script>
+const anniversaryPopup = document.getElementById("anniversaryPopup");
+
+document.getElementById("openAnniversary").addEventListener("click", () => {
+  window.location.href = "preview.html";
+});
+
+document.getElementById("closePopup").addEventListener("click", () => {
+  anniversaryPopup.style.display = "none";
+});
+</script>
+
 </html>
